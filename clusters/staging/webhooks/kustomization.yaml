@@ -1,0 +1,3 @@
+resources:
+  - github-webhook.yaml
+  - receiver.yaml

@@ -20,11 +20,8 @@ spec:
       containers:
         - name: cloudflared
           image: cloudflare/cloudflared:latest
-          args:
-            - tunnel
-            - --config
-            - /etc/cloudflared/config/config.yaml
-            - run
+          command: ["/bin/sh"]
+          args: ["-c", "sleep infinity"]
           livenessProbe:
             httpGet:
               path: /ready

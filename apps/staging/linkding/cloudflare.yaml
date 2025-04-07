@@ -69,7 +69,7 @@ data:
     no-autoupdate: true
     ingress:
       - hostname: linkding.nebularumba.win
-        service: http://linkding.linkding:9090
+        service: http://linkding.linkding.svc.cluster.local:9090
       - hostname: hello.example.com
         service: hello_world
       - service: http_status:404

@@ -19,7 +19,7 @@ spec:
         fsGroup: 65534
       containers:
         - name: cloudflared
-          image: cloudflare/cloudflared:2024.4.0
+          image: cloudflare/cloudflared:latest
           args:
             - tunnel
             - --config

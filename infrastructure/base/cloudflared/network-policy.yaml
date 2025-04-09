@@ -14,9 +14,6 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: linkding
-    ports:
-    - protocol: TCP
-      port: 9090
   - to:
     - namespaceSelector:
         matchLabels:
@@ -24,3 +21,11 @@ spec:
     ports:
     - protocol: UDP
       port: 53
+    - protocol: TCP
+      port: 53
+  - to:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+    ports:
+    - protocol: TCP
+      port: 7844

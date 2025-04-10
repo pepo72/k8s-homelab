@@ -1,0 +1,3 @@
+# clusters/staging/cloudflared/kustomization.yaml
+resources:
+  - cloudflare-secret.enc.yaml

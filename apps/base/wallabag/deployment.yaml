@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wallabag
+  namespace: wallabag
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wallabag
+  template:
+    metadata:
+      labels:
+        app: wallabag
+    spec:
+      containers:
+        - name: wallabag
+          image: wallabag/wallabag:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: wallabag-credentials
+          volumeMounts:
+            - name: wallabag-data
+              mountPath: /var/www/wallabag/data
+      volumes:
+        - name: wallabag-data
+          persistentVolumeClaim:
+            claimName: wallabag-data-pvc

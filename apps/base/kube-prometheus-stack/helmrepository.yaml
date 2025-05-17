@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: prometheus-community
+  namespace: monitoring # Will be created in the 'monitoring' namespace
+spec:
+  interval: 24h # How often Flux checks for updates to the repository
+  url: https://prometheus-community.github.io/helm-charts

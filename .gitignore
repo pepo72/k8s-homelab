@@ -1,1 +1,3 @@
 linkding-secret.yaml
+wallabag-secret.yaml
+apps/base/kube-prometheus-stack/grafana-admin-secret.yaml
